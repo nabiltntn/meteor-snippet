@@ -58,6 +58,10 @@ SnippetEditor = React.createClass({
     let language = this.data.languages[this.refs.language.state.selectedIndex].code;
     Snippets.insert({language : language, content : this.refs.content.getValue(),
       title : this.refs.title.getValue(), level : this.refs.level.state.value});
+
+      //Empty value for next save
+      this.refs.content.setValue("");
+      this.refs.title.setValue("");
       this.refs.information.show();
     }
   });
