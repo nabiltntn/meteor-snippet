@@ -15,12 +15,22 @@ SnippetDisplay = React.createClass({
     }
   },
   render() {
+
+    let levels = {1 : 'Beginner', 2 : 'Intermediate', 3 : 'Expert'};
+    let level = this.props.currentSnippet ? levels[this.props.currentSnippet.level] : '';
+
+
     return (
       <div>
         <AppBar title="snippet detail">
         </AppBar>
 
+
         <Card>
+          <CardText>
+            {level}
+          </CardText>
+
           <CardText>
             <MarkdownDisplayer snippet={this.props.currentSnippet || {content : '' , language : ''}} />
           </CardText>
@@ -33,8 +43,6 @@ SnippetDisplay = React.createClass({
                 floatingLabelText="comment or question"
             multiLine={true}  />
           <RaisedButton onClick={this._onCommentSave} label="add" secondary={true} />
-
-
           </CardText>
         </Card>
         {this.displayComments()}
