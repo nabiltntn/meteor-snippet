@@ -33,10 +33,11 @@ SnippetDisplay = React.createClass({
                 floatingLabelText="comment or question"
             multiLine={true}  />
           <RaisedButton onClick={this._onCommentSave} label="add" secondary={true} />
-          {this.displayComments()}
+
 
           </CardText>
         </Card>
+        {this.displayComments()}
 
       </div>
     );
