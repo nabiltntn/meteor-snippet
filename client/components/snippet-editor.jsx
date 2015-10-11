@@ -42,6 +42,15 @@ SnippetEditor = React.createClass({
             <RaisedButton onClick={this._onSnippetSave} label="save" secondary={true} />
           </CardText>
         </Card>
+
+        <Snackbar
+  style={{float : 'right'}}
+  ref="information"
+  message="Snipped saved !"
+  action="Great !"
+  autoHideDuration={5000}/>
+
+
       </div>
     );
   },
@@ -49,6 +58,6 @@ SnippetEditor = React.createClass({
     let language = this.data.languages[this.refs.language.state.selectedIndex].code;
     Snippets.insert({language : language, content : this.refs.content.getValue(),
       title : this.refs.title.getValue(), level : this.refs.level.state.value});
-      //this.refs.information.show();
+      this.refs.information.show();
     }
   });
