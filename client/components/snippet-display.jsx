@@ -1,6 +1,6 @@
 // Component to display tha snippet with comments and buttons to interact with
 const {
-  AppBar,Card,CardText,TextField,CardTitle,RaisedButton
+  AppBar,Card,CardText,TextField,CardTitle,RaisedButton,Snackbar
 } = mui;
 
 // Define the SnippetDisplay Component
@@ -39,6 +39,14 @@ SnippetDisplay = React.createClass({
         </Card>
         {this.displayComments()}
 
+
+        <Snackbar
+  style={{float : 'right'}}
+  ref="forNewComent"
+  message="comment saved !"
+  action="Great !"
+  autoHideDuration={5000}/>
+
       </div>
     );
   },
@@ -46,6 +54,10 @@ SnippetDisplay = React.createClass({
     var snippetId = this.props.currentSnippet ? this.props.currentSnippet._id : null;
     Comments.insert({content : this.refs.comment.getValue(),
       snippetId : snippetId});
+
+      //clean form afte saving a new comment
+      this.refs.comment.setValue("");
+      this.refs.forNewComent.show();
     },
     displayComments() {
       return this.data.comments.map((comment) => {
