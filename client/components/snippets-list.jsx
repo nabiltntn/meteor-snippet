@@ -42,7 +42,7 @@ SnippetList = React.createClass({
           </div>);
         });
       },
-      changeCurrentSnippet(event) {
+  changeCurrentSnippet(event) {
         let currentId = event.currentTarget.id;
         let currentSnippet = this.data.snippets.find((snippet) => {
           return snippet._id === currentId;

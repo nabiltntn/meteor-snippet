@@ -70,7 +70,7 @@ Main = React.createClass({
     return (
 
 
-      <SplitPane split="vertical" minSize="50" defaultSize="100">
+      <SplitPane split="vertical" minSize="50" defaultSize="400">
         <div>
 
           <LeftNav header={<Avatar src="http://www.thinkstockphotos.fr/CMS/StaticContent/Hero/TS_AnonHP_462882495_01.jpg" />} ref="leftNav" docked={false}  menuItems={menuItems} />
@@ -100,7 +100,7 @@ Main = React.createClass({
       </div>
       <div>
         <div>
-          <SplitPane split="vertical" minSize="50" defaultSize="100">
+          <SplitPane split="vertical" minSize="50" defaultSize="400">
             <SnippetList onSelectSnippet={this.setCurrentState}/>
             <SnippetDisplay currentSnippet={this.state.currentSnippet}/>
           </SplitPane>

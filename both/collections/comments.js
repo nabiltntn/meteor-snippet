@@ -7,7 +7,6 @@ CommentsSchema = new SimpleSchema({
     type: String,
     label: "snippet id"
   },
-
   createdAt: {
     label : 'Created at',
     type: Date,
